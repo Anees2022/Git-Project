@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+  environment {
+    ANIS = "Anis"
+  }
+  stages {
+    stage("stage 1") {
+      steps {
+        sh 'env |sort'
+      }
+    }
+    stage("stage 2") {
+      steps {
+        sh "echo $ANIS"
+      }
+    }
+  }
+}
